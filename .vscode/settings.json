@@ -1,13 +1,12 @@
 {
-  "[java]": {
-    "redhat.telemetry.enabled": false
-  },
-  "java.jdt.ls.java.home": "",
+  "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-26.0.1",
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-26",
-      "path": "",
+      "path": "C:\\Program Files\\Java\\jdk-26.0.1",
       "default": true
     }
-  ]
+  ],
+  "redhat.telemetry.enabled": false,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
