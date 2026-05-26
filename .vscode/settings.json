@@ -1,0 +1,13 @@
+{
+  "[java]": {
+    "redhat.telemetry.enabled": false
+  },
+  "java.jdt.ls.java.home": "",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-26",
+      "path": "",
+      "default": true
+    }
+  ]
+}
