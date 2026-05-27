@@ -32,6 +32,12 @@ public class PacketRule implements Comparable<PacketRule> {
 
     @Override
     public int compareTo(PacketRule other) {
+        int priorityComparison = Integer.compare(other.priority, this.priority);
+
+        if (priorityComparison != 0) {
+            return priorityComparison;
+        }
+
         return Integer.compare(this.id, other.id);
     }
 
