@@ -41,6 +41,7 @@ public class PacketRule implements Comparable<PacketRule> {
         return Integer.compare(this.id, other.id);
     }
 
+/* Alteração da Prioridade feita e solicitada pela QA */
     @Override
     public String toString() {
         return "PacketRule{" +
