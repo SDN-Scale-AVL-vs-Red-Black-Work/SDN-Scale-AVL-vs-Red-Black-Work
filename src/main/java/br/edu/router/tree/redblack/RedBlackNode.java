@@ -13,4 +13,24 @@ public class RedBlackNode {
         this.rule = rule;
         this.color = Color.RED;
     }
+
+    public PacketRule getRule() {
+        return rule;
+    }
+
+    public RedBlackNode getLeft() {
+        return left;
+    }
+
+    public RedBlackNode getRight() {
+        return right;
+    }
+
+    public RedBlackNode getParent() {
+        return parent;
+    }
+
+    public Color getColor() {
+        return color;
+    }
 }

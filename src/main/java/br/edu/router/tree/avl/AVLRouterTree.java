@@ -41,6 +41,10 @@ public class AVLRouterTree implements RouterTree {
 
     @Override
     public boolean search(PacketRule rule) {
+        if (rule == null) {
+        return false;
+        }
+
         return searchNode(root, rule) != null;
     }
 

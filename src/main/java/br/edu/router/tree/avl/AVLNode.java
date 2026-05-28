@@ -13,4 +13,20 @@ public class AVLNode {
         this.rule = rule;
         this.height = 1;
     }
+
+    public PacketRule getRule() {
+        return rule;
+    }
+
+    public AVLNode getLeft() {
+        return left;
+    }
+
+    public AVLNode getRight() {
+        return right;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }
