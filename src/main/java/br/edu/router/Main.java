@@ -1,42 +1,43 @@
 package br.edu.router;
 
-/* Teste temporário apenas para validar se a lógica funcionou de maneira correta e coerente */
-
+import br.edu.router.benchmark.BenchmarkResult;
+import br.edu.router.benchmark.BenchmarkRunner;
+import br.edu.router.benchmark.DataGenerator;
 import br.edu.router.model.PacketRule;
 import br.edu.router.tree.avl.AVLRouterTree;
 import br.edu.router.tree.redblack.RedBlackRouterTree;
+import br.edu.router.util.CsvExporter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        AVLRouterTree avl = new AVLRouterTree();
-        RedBlackRouterTree rb = new RedBlackRouterTree();
+        long seed = 42L; // Rigor científico: mesma semente para os mesmos dados nas duas árvores
+        int[] volumes = {10000, 100000, 1000000};
+        List<BenchmarkResult> performanceResults = new ArrayList<>();
 
-        PacketRule rule1 = new PacketRule(1, "10.0.0.1", "10.0.0.2", 5);
-        PacketRule rule2 = new PacketRule(2, "10.0.0.3", "10.0.0.4", 10);
-        PacketRule rule3 = new PacketRule(3, "10.0.0.5", "10.0.0.6", 3);
+        System.out.println("🤖 MONITOR DE DESEMPENHO SDN-SCALE ATIVADO 🤖\n");
 
-        avl.insert(rule1);
-        avl.insert(rule2);
-        avl.insert(rule3);
+        for (int volume : volumes) {
+            // Gera bases de dados idênticas para a rodada atual
+            List<PacketRule> avlDataset = DataGenerator.generateOrderedRules(volume, seed);
+            List<PacketRule> rbtDataset = DataGenerator.generateOrderedRules(volume, seed);
 
-        rb.insert(rule1);
-        rb.insert(rule2);
-        rb.insert(rule3);
+            // Instancia as árvores do projeto (com os nomes exatos do Integrante 1)
+            AVLRouterTree avlTree = new AVLRouterTree();
+            RedBlackRouterTree rbtTree = new RedBlackRouterTree();
 
-        System.out.println("AVL tamanho: " + avl.size());
-        System.out.println("AVL busca rule2: " + avl.search(rule2));
+            // Executa os testes pesados na árvore AVL
+            BenchmarkResult avlRes = BenchmarkRunner.runPerformanceTest(avlTree, avlDataset, "AVL_Tree");
+            performanceResults.add(avlRes);
 
-        avl.delete(rule2);
+            // Executa os testes pesados na árvore Red-Black
+            BenchmarkResult rbtRes = BenchmarkRunner.runPerformanceTest(rbtTree, rbtDataset, "RedBlack_Tree");
+            performanceResults.add(rbtRes);
+        }
 
-        System.out.println("AVL tamanho apos delete: " + avl.size());
-        System.out.println("AVL busca rule2 apos delete: " + avl.search(rule2));
-
-        System.out.println("RB tamanho: " + rb.size());
-        System.out.println("RB busca rule2: " + rb.search(rule2));
-
-        rb.delete(rule2);
-
-        System.out.println("RB tamanho apos delete: " + rb.size());
-        System.out.println("RB busca rule2 apos delete: " + rb.search(rule2));
+        // Exporta o relatório final em CSV usando o teu método do CsvExporter
+        CsvExporter.exportToCSV(performanceResults, "performance_results.csv");
     }
 }
