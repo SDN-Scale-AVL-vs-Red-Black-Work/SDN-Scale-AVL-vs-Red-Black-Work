@@ -6,9 +6,9 @@ public interface RouterTree {
 
     void insert(PacketRule rule);
 
-    boolean search(int id);
+    boolean search(PacketRule rule);
 
-    void delete(int id);
+    void delete(PacketRule rule);
 
     int getRotationCount();
 
