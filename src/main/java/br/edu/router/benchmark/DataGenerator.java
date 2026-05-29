@@ -17,6 +17,7 @@ public class DataGenerator {
 
             rules.add(new PacketRule(i,ipOrigem, ipDestino, prioridade));
         }
+        rules.sort(null);
         return rules;
     }
 }
