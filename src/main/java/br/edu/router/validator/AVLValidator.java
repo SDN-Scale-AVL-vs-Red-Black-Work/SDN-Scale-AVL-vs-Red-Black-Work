@@ -35,13 +35,9 @@ public class AVLValidator {
     }
 
     /**
-     * Percorre recursivamente a subárvore verificando três invariantes:
-     * 1) Propriedade BST — usando limites mínimo e máximo globais
-     * 2) Fator de Equilíbrio |FB| <= 1
-     * 3) Altura armazenada == altura real
-     *
-     * Retorna a altura real da subárvore.
-     */
+    * Valida a subárvore e retorna sua altura real.
+    * Verifica BST, balanceamento e altura dos nós.
+    */
     private static int checkNode(AVLNode node, PacketRule minBound, PacketRule maxBound,
                                  List<String> violations) {
         if (node == null) return 0;
