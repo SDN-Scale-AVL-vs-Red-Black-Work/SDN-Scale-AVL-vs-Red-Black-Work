@@ -21,7 +21,7 @@ Este projeto compara duas estruturas de árvore (AVL e Red-Black) aplicadas a ro
   - `charts/` — imagens/plots gerados
 
 ## Requisitos
-- Java 11 ou superior
+- Java 26 ou superior (conforme `<maven.compiler.release>26</maven.compiler.release>` no `pom.xml`)
 - Maven 3.6+
 
 ## Como compilar
