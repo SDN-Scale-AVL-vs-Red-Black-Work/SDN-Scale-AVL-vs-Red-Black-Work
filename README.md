@@ -1,7 +1,7 @@
 # SDN-Scale-AVL-vs-Red-Black-Work
 
 ## Visão geral
-Este projeto compara duas estruturas de árvore (AVL e Red-Black) aplicadas a roteadores/filtragem de pacotes, medindo desempenho e escalabilidade. Inclui geradores de dados, validadores, rotinas de benchmark e exportadores de resultados para CSV e gráficos.
+Este projeto compara duas estruturas de árvore (AVL e Red-Black) aplicadas a roteadores/filtragem de pacotes, medindo desempenho e escalabilidade. Inclui geradores de dados, validadores, rotinas de benchmark e exportação de resultados para CSV.
 
 ## Objetivos
 - Implementar e comparar `AVLRouterTree` e `RedBlackRouterTree` em operações relevantes para tabelas de regras de roteador.
