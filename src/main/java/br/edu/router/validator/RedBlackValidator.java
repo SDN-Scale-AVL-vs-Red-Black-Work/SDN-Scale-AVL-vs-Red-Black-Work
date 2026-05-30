@@ -45,13 +45,8 @@ public class RedBlackValidator {
     }
 
     /**
-     * Percorre recursivamente a subárvore verificando:
-     * - Propriedade BST (bounds globais)
-     * - Prop. 4: nó VERMELHO não pode ter filho VERMELHO
-     * - Validade dos ponteiros pai
-     * - Prop. 5: altura-negra igual em todos os caminhos da raiz até folhas
-     *
-     * Retorna a altura-negra da subárvore. Nó nulo vale 1 (folha sentinela preta).
+     * Valida a subárvore e retorna sua altura-negra.
+     * Verifica BST, propriedades de cor e ponteiros pai.
      */
     private static int checkNode(RedBlackNode node, PacketRule minBound, PacketRule maxBound,
                                  List<String> violations) {
