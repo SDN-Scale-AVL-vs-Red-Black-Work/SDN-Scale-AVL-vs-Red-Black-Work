@@ -54,7 +54,7 @@ mvn -Dexec.mainClass="br.edu.router.Main" exec:java
 
 ## Saída e análise
 - Resultados CSV: `results/benchmark_results.csv` e `results/performance_results.csv`.
-- Gráficos gerados em: `results/charts/`.
+- Se gráficos forem gerados por ferramentas externas, salve-os em `results/charts/`.
 
 Para reproduzir análises ou gerar novos gráficos, abra os CSVs em sua ferramenta preferida (Python/pandas, R, Excel) ou verifique scripts locais (se houver).
 
