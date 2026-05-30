@@ -38,19 +38,9 @@ mvn test
 ```
 
 ## Como executar os benchmarks
-Você pode executar a classe principal do benchmark diretamente via Maven Exec. Exemplo:
+Execute a classe principal que orquestra os benchmarks via Maven Exec:
 
-```bash
-mvn -Dexec.mainClass="br.edu.router.benchmark.BenchmarkRunner" exec:java
-```
-
-Isso executará os cenários de benchmark definidos em `BenchmarkRunner` e gravará os resultados em `results/`.
-
-Alternativamente, se houver um `Main` que orquestre execuções, rode:
-
-```bash
-mvn -Dexec.mainClass="br.edu.router.Main" exec:java
-```
+    mvn -Dexec.mainClass="br.edu.router.Main" exec:java
 
 ## Saída e análise
 - Resultados CSV: `results/benchmark_results.csv` e `results/performance_results.csv`.
